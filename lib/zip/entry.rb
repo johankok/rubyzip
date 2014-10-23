@@ -333,7 +333,7 @@ module Zip
     end
 
     def check_c_dir_entry_static_header_length(buf)
-      unless buf.bytesize == ::Zip::CDIR_ENTRY_STATIC_HEADER_LENGTH
+      unless buf && buf.bytesize == ::Zip::CDIR_ENTRY_STATIC_HEADER_LENGTH
         raise Error, 'Premature end of file. Not enough data for zip cdir entry header'
       end
     end
